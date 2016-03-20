@@ -104,6 +104,7 @@ ccmd_start_game(json_t * params)
 
     mkdir(path, 0755);  /* should already exist unless something went wrong
                            while upgrading */
+    printf("trying to open to %s\n", path);
     fd = open(filename, O_EXCL | O_CREAT | O_RDWR, 0600);
     if (fd == -1)
         exit_client("Could not create the logfile");

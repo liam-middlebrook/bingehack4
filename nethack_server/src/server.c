@@ -459,9 +459,11 @@ handle_new_connection(int newfd, int epfd)
     userid = auth_user(authbuf, addr2str(&addr), &is_reg, &reconnect_id);
     if (userid <= 0) {
         if (!userid)
+            log_msg("authentication failed unkown user");
             auth_send_result(newfd, AUTH_FAILED_UNKNOWN_USER, is_reg, 0);
         else
             auth_send_result(newfd, AUTH_FAILED_BAD_PASSWORD, is_reg, 0);
+            log_msg("authentication failed bad pass");
         log_msg("authentication failed for %s", addr2str(&addr));
         close(newfd);
         return;
