@@ -1,9 +1,9 @@
 node {
- stage 'Checkout' {
+ stage 'checkout' {
     checkout poll: true, scm: scm
  }
 
- stage 'Build' {
+ stage 'build' {
     sh './travis-build'
  }
 }
