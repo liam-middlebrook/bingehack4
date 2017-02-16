@@ -1,6 +1,6 @@
 node {
  stage 'checkout' {
-    checkout poll: true, scm: scm
+    checkout scm
  }
 
  stage 'build' {
