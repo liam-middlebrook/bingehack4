@@ -26,4 +26,4 @@ matrix:
       CXX: clang-3.5
   CFLAGS:
     - -O3
-    -  # blank for no-flags
+    - ""
