@@ -24,6 +24,18 @@ matrix:
       CXX: clang-3.4
     - CC: clang-3.5
       CXX: clang-3.5
-  CFLAGS:
-    - -O3
-    - ""
+    - CC: gcc-4.6
+      CXX: g++-4.6
+      CFLASG: -O3
+    - CC: gcc-4.7
+      CXX: g++-4.7
+      CFLASG: -O3
+    - CC: gcc-4.8
+      CXX: g++-4.8
+      CFLASG: -O3
+    - CC: clang-3.4
+      CXX: clang-3.4
+      CFLASG: -O3
+    - CC: clang-3.5
+      CXX: clang-3.5
+      CFLASG: -O3
