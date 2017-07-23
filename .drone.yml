@@ -25,6 +25,9 @@ pipeline:
     when:
       event: deployment
       environment: production
+      matrix:
+        CC: gcc-4.8
+        CXX: g++-4.8
 matrix:
   include:
     - CC: gcc-4.6
