@@ -21,6 +21,7 @@ pipeline:
     script:
       - sudo -u nethack /home/nethack/ci-update.sh ${DRONE_COMMIT_SHA}
     command_timeout: 3600
+    secrets: [ DEPLOY_KEY ]
     when:
       event: deployment
       environment: production
