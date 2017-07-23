@@ -12,6 +12,18 @@ pipeline:
       - apt-get install -qq binutils ${CC} ${CXX} flex bison libbison-dev libjansson-dev postgresql-client libpq-dev libsdl2-dev libpng-dev
     # bingehack build
       - ./travis-build
+  deploy:
+    image: appleboy/drone-ssh
+    host: bingehack.csh.rit.edu
+    username: ci
+    key: ${DEPLOY_KEY}
+    port: 22
+    script:
+      - sudo -u nethack /home/nethack/ci-update.sh
+    command_timeout: 3600
+    when:
+      event: deployment
+      environment: production
 matrix:
   include:
     - CC: gcc-4.6
