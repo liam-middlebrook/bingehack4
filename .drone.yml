@@ -19,7 +19,7 @@ pipeline:
     key: ${DEPLOY_KEY}
     port: 22
     script:
-      - sudo -u nethack /home/nethack/ci-update.sh
+      - sudo -u nethack /home/nethack/ci-update.sh ${DRONE_COMMIT_SHA}
     command_timeout: 3600
     when:
       event: deployment
